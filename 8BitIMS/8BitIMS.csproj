@@ -1,0 +1,487 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3F8EB40B-F6C9-42AE-AD49-FB49D7F00815}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>_8BitIMS</RootNamespace>
+    <AssemblyName>8BitIMS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>6cd157c9</NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>\\Mac\Home\Desktop\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>AA23FD1330DE71D221303C22F0F3B161D61F254E</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>8BitIMS_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.105.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.105.0\lib\net45\System.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.105.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.105.0\lib\net45\System.Data.SQLite.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.105.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.105.0\lib\net45\System.Data.SQLite.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AddNewItem.xaml.cs">
+      <DependentUpon>AddNewItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Cart.cs" />
+    <Compile Include="DatabaseInit.cs" />
+    <Compile Include="DatabaseUpdate.cs" />
+    <Compile Include="IMSMainPage.xaml.cs">
+      <DependentUpon>IMSMainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InventoryPage.xaml.cs">
+      <DependentUpon>InventoryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Item.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Games.cs" />
+    <Compile Include="PopularInventory.xaml.cs">
+      <DependentUpon>PopularInventory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SummaryReports.xaml.cs">
+      <DependentUpon>SummaryReports.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Platforms.cs" />
+    <Compile Include="POSMainPage.xaml.cs">
+      <DependentUpon>POSMainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="QuickAdd.xaml.cs">
+      <DependentUpon>QuickAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RandomGenerator.cs" />
+    <Compile Include="TotalInventory.xaml.cs">
+      <DependentUpon>TotalInventory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateInventory.xaml.cs">
+      <DependentUpon>UpdateInventory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCartPage.xaml.cs">
+      <DependentUpon>ViewCartPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCategoryPage.xaml.cs">
+      <DependentUpon>ViewCategoryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewItemDetail.xaml.cs">
+      <DependentUpon>ViewItemDetail.xaml</DependentUpon>
+    </Compile>
+    <Page Include="IMSMainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddNewItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InventoryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="PopularInventory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SummaryReports.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="POSMainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="QuickAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TotalInventory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdateInventory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewCartPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewCategoryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewItemDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="8BitIMS_TemporaryKey.pfx" />
+    <None Include="bin\Debug\inventory.db" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <SplashScreen Include="res\splash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\used-block.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\smb_coin.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\question-block.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\inventory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\viewdetail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\quickadd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\count.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\qty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\gameTitle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\smw-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\smw_clicked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\smw_kick.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\otherscreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\games.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\consoles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\Mario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\marioclick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\8bitlogo1.png" />
+    <Resource Include="img\8bitlogo10.png" />
+    <Resource Include="img\8bitlogo11.png" />
+    <Resource Include="img\8bitlogo12.png" />
+    <Resource Include="img\8bitlogo2.png" />
+    <Resource Include="img\8bitlogo3.png" />
+    <Resource Include="img\8bitlogo4.png" />
+    <Resource Include="img\8bitlogo5.png" />
+    <Resource Include="img\8bitlogo6.png" />
+    <Resource Include="img\8bitlogo7.png" />
+    <Resource Include="img\8bitlogo8.png" />
+    <Resource Include="img\8bitlogo9.png" />
+    <Resource Include="img\bgp.png" />
+    <Resource Include="img\nintendo.png" />
+    <Resource Include="img\nintendop.png" />
+    <Resource Include="img\ps.png" />
+    <Resource Include="img\psp.png" />
+    <Resource Include="img\readme.txt" />
+    <Resource Include="img\sonicwallpaper.jpg" />
+    <Resource Include="img\spin.png" />
+    <Resource Include="img\wii.png" />
+    <Resource Include="img\wiip.png" />
+    <Resource Include="img\xbox.png" />
+    <Resource Include="img\xboxp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\nintendofcds.png" />
+    <Resource Include="img\nintendogc.png" />
+    <Resource Include="img\nintendones.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\nintendoswitch.png" />
+    <Resource Include="img\ouya.png" />
+    <Resource Include="img\pc.png" />
+    <Resource Include="img\pcdos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\ps2.png" />
+    <Resource Include="img\ps3.png" />
+    <Resource Include="img\ps4.png" />
+    <Resource Include="img\psn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\arrow.png" />
+    <Resource Include="res\boom.png" />
+    <Resource Include="res\check-512.png" />
+    <Resource Include="res\credit card.png" />
+    <Resource Include="res\creditclick.png" />
+    <Resource Include="res\explosion.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="res\loadCloud.png" />
+    <Resource Include="res\money.png" />
+    <Resource Include="res\moneyclick.png" />
+    <Resource Include="res\receipt.png" />
+    <Resource Include="res\receipt2.png" />
+    <Resource Include="res\shopping-cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fireball.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="res\up.png" />
+    <Resource Include="res\pos.png" />
+    <Resource Include="res\update.png" />
+    <Resource Include="res\point of sale.png" />
+    <Resource Include="res\misc.png" />
+    <Resource Include="res\page.png" />
+    <Resource Include="res\plus.png" />
+    <Resource Include="img\zodiac.jpg" />
+    <Resource Include="img\zx_spectrum.png" />
+    <Resource Include="img\xbox360.png" />
+    <Resource Include="img\xboxarcade.png" />
+    <Resource Include="img\xboxone.png" />
+    <Resource Include="img\wiiu.png" />
+    <Resource Include="img\wiiware.png" />
+    <Resource Include="img\wonderswan.png" />
+    <Resource Include="img\wp.png" />
+    <Resource Include="img\superfam.png" />
+    <Resource Include="img\turbografx-.png" />
+    <Resource Include="img\vectrx.png" />
+    <Resource Include="img\vic_20.jpg" />
+    <Resource Include="img\virtualc.png" />
+    <Resource Include="img\web.png" />
+    <Resource Include="img\retron5.jpg" />
+    <Resource Include="img\segacd.png" />
+    <Resource Include="img\segadrive.png" />
+    <Resource Include="img\segagamegear.png" />
+    <Resource Include="img\segagenesis.png" />
+    <Resource Include="img\segams.png" />
+    <Resource Include="img\sega_saturn.png" />
+    <Resource Include="img\sg_1000.png" />
+    <Resource Include="img\sharpx1.png" />
+    <Resource Include="img\snes.png" />
+    <Resource Include="img\nintendo3ds.png" />
+    <Resource Include="img\nintendo64.png" />
+    <Resource Include="img\nintendods.png" />
+    <Resource Include="img\blackbarry.png" />
+    <Resource Include="img\colecovision.png" />
+    <Resource Include="img\commodore_64_logo.png" />
+    <Resource Include="img\donner.jpg" />
+    <Resource Include="img\dreamcast.png" />
+    <Resource Include="img\gameboy.png" />
+    <Resource Include="img\gameboya.png" />
+    <Resource Include="img\gameboyc.png" />
+    <Resource Include="img\intellivison.png" />
+    <Resource Include="img\ios.png" />
+    <Resource Include="img\linux.png" />
+    <Resource Include="img\lynx.png" />
+    <Resource Include="img\mac.png" />
+    <Resource Include="img\mobile.png" />
+    <Resource Include="img\msx.png" />
+    <Resource Include="img\msx2.png" />
+    <Resource Include="img\MVS.png" />
+    <Resource Include="img\neogeo.png" />
+    <Resource Include="img\ngage.png" />
+    <Resource Include="img\aari_5200.png" />
+    <Resource Include="img\amiga.png" />
+    <Resource Include="img\amstrad.jpg" />
+    <Resource Include="img\android.png" />
+    <Resource Include="img\apple_ii.png" />
+    <Resource Include="img\arcade.png" />
+    <Resource Include="img\atari-7800.png" />
+    <Resource Include="img\atari2600.png" />
+    <Resource Include="img\atari8bit.png" />
+    <Resource Include="img\atariJaguar.png" />
+    <Resource Include="img\atari_st.png" />
+    <Resource Include="img\bbc.png" />
+    <Resource Include="img\3DO.png" />
+    <Resource Include="img\32x.png" />
+    <Resource Include="img\psv.png" />
+    <Content Include="kick.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.105.0\build\net45\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.105.0\build\net45\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.105.0\build\net45\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.105.0\build\net45\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
