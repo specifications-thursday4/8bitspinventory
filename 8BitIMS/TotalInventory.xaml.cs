@@ -67,6 +67,7 @@ namespace _8BitIMS
             command.CommandText = "SELECT name, quantity, CASE WHEN price < 0 THEN 0 ELSE price END, inBoxQuant, CASE WHEN inBoxPrice < 0 THEN 0 ELSE inBoxPrice END FROM platforms";
             SQLiteDataReader sdr = command.ExecuteReader();
             List<String> conNames = new List<String>();
+            List<int> platValue = new List<int>();
 
             int platformValue = 0;
             int platformQty = 0;
@@ -80,19 +81,20 @@ namespace _8BitIMS
                 platformValue += sdr.GetInt32(3) * sdr.GetInt32(4);
                 platcount.Content = sdr.GetInt32(3) + sdr.GetInt32(1);
                 CountCon.Children.Add(platcount);
+                platValue.Add(sdr.GetInt32(2) * sdr.GetInt32(1) + sdr.GetInt32(3) * sdr.GetInt32(4));
             }
             sdr.Close();
 
             int gameTotal = 0;
             int priceTotal = platformValue;
-            foreach (String consoleName in conNames)
+            for(int i =0; i < conNames.Count(); i++)
             {
                 Label gameLabel = new Label();
-                gameLabel.Content = consoleName;
+                gameLabel.Content = conNames[i];
                 GameColumn.Children.Add(gameLabel);
                 command.CommandText = "SELECT m.quantity, CASE WHEN m.price < 0 THEN 0 ELSE m.price END FROM games g INNER JOIN ("
                      + " SELECT game_id, quantity, price FROM multiplat_games WHERE platform_id = ("
-                     + " SELECT id FROM platforms WHERE name = '" + consoleName + "'"
+                     + " SELECT id FROM platforms WHERE name = '" + conNames[i] + "'"
                      + "))m ON g.id = m.game_id;";
 
                 sdr = command.ExecuteReader();
@@ -109,7 +111,7 @@ namespace _8BitIMS
                     }
                 }
                 gamecount.Content = tempCount;
-                price.Content = tempValue;
+                price.Content = tempValue+platValue[i];
                 gameTotal += tempCount;
                 priceTotal += tempValue;
                 Count.Children.Add(gamecount);

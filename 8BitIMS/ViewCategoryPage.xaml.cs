@@ -75,10 +75,10 @@ namespace _8BitIMS
 
             // AddToCart.Children.Add(addCartButton);
 
-            command.CommandText = "SELECT g.id, g.name, m.quantity, m.price FROM games g INNER JOIN ("
+            command.CommandText = "SELECT g.id, g.name, m.quantity, CASE WHEN m.price < 0 THEN 0 ELSE m.price END FROM games g INNER JOIN ("
                + " SELECT game_id, quantity, price FROM multiplat_games WHERE platform_id = ("
                + " SELECT id FROM platforms WHERE name = '" + tableName + "'"
-               + "))m ON g.id = m.game_id ORDER BY g.name ASC;";
+               + "))m ON g.id = m.game_id WHERE m.quantity > 0 ORDER BY g.name ASC;";
 
            
             String tmpPrice = "0";
@@ -119,7 +119,7 @@ namespace _8BitIMS
                 fieldcount++;
             }
 
-
+            sdr.Close();
             
             conn.Close();
         }
@@ -127,7 +127,6 @@ namespace _8BitIMS
         private void confirmEvent(object sender, RoutedEventArgs e)
         {
             Item item_to_cart = new Item();
-
 
             SQLiteConnection conn = new SQLiteConnection(DATABASE);
             conn.Open();
@@ -142,24 +141,22 @@ namespace _8BitIMS
 
                 if (sender == item.Value)
                 {
-                    command.CommandText = "SELECT price FROM multiplat_games WHERE game_id = " + item.Key;
+                    command.CommandText = "SELECT price FROM multiplat_games WHERE game_id = " + item.Key +" AND platform_id = " +platID;
 
                     item_to_cart.price = (int)command.ExecuteScalar();
 
                     item_to_cart.gameID = item.Key;
                     item_to_cart.quantity++;
 
-                    command.CommandText = "SELECT platform_id FROM multiplat_games WHERE game_id = " + item.Key;
 
-
-                    item_to_cart.platID = (int)command.ExecuteScalar();
-
-                    
+                    item_to_cart.platID = platID;
                     
                 }
             }
 
             MainWindow.Cart.addItem(item_to_cart);
+
+            conn.Close();
         }
 
         private void Back(object sender, RoutedEventArgs e)

@@ -54,7 +54,7 @@ namespace _8BitIMS
                 btn.Content = sdr.GetString(0);
                 SystemsCategories.Children.Add(btn);
             }
-
+            sdr.Close();
 
 
             conn.Close();

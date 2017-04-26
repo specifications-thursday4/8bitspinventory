@@ -574,7 +574,7 @@ namespace _8BitIMS
 
             }
 
-
+            conn.Close();
         }
 
         private void cancelEvent(object sender, EventArgs e)

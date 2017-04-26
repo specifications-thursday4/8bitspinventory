@@ -124,7 +124,7 @@ namespace _8BitIMS
                 CurrentPrice.Children.Add(price);
                 fieldcount++;
             }
-
+            sdr.Close();
             countBoxQ = new TextBox[fieldcount + 1];
             countBoxP = new TextBox[fieldcount + 1];
 

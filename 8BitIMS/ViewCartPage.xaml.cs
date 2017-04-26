@@ -23,6 +23,7 @@ namespace _8BitIMS
     {
         private static string DATABASE = "Data Source = inventory.db";
         private int total = 0;
+        private String time;
         public ViewCartPage()
         {
            
@@ -41,18 +42,22 @@ namespace _8BitIMS
         {
             SQLiteConnection conn = new SQLiteConnection(DATABASE);
             conn.Open();
+            var command = conn.CreateCommand();
 
-            
+            command.CommandText = "Select datetime(strftime('%Y-%m-%d %H:%M:%S','now'), 'localtime')";
+            SQLiteDataReader sdr = command.ExecuteReader();
+            sdr.Read();
+            time = sdr.GetString(0);
+            sdr.Close();
 
             foreach (var item in MainWindow.Cart.iList)
             {
-                var command = conn.CreateCommand();
                 command.CommandText = "SELECT g.name, m.price FROM " +
                     "games g INNER JOIN multiplat_games m " +
                     "ON g.id = m.game_id " +
-                    "WHERE g.id = " + item.gameID;
+                    "WHERE g.id = " + item.gameID +" AND m.platform_id = "+item.platID;
 
-                SQLiteDataReader sdr = command.ExecuteReader();
+                sdr = command.ExecuteReader();
 
                 while (sdr.Read())
                 {
@@ -71,7 +76,9 @@ namespace _8BitIMS
 
 
                 }
+                sdr.Close();
             }
+            conn.Close();
             
             
         }
@@ -80,7 +87,7 @@ namespace _8BitIMS
         {
             Random rand = new Random();
             ReceiptHead.Text = "Check# " + (rand.Next()) % 450;
-            ReceptHead2.Text += DateTime.Now;
+            ReceptHead2.Text += time;
 
         }
 
@@ -110,7 +117,7 @@ namespace _8BitIMS
                 {
                   
                  command.CommandText = "INSERT INTO transactions (game_id, platform_id, quantity, time) VALUES("+
-                           item.gameID + "," + item.platID + "," + item.quantity + ",'" + DateTime.Now + "');";
+                           item.gameID + "," + item.platID + "," + item.quantity + ",'" + time + "');";
                  command.ExecuteNonQuery();
 
                  command.CommandText = "UPDATE multiplat_games " +

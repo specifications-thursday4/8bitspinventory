@@ -95,7 +95,7 @@ namespace _8BitIMS
                 + " FROM games g INNER JOIN(SELECT p.name, m.price, game_id, platform_id from "
                 + " multiplat_games m inner join platforms p on p.id = m.platform_id) b on "
                 + " g.id = b.game_id) s on s.game_id = t.game_id and s.platform_id = t.platform_id"
-                + " where julianday('now')-julianday(t.time) < " + timeFrame + " order by Game DESC;";
+                + " where datetime(strftime('%d','now'), 'localtime')-strftime('%d',t.time) < " + timeFrame + " order by Game DESC;";
 
             SQLiteDataReader sdr = command.ExecuteReader();
             List<String> tempgameNames = new List<String>();
@@ -127,25 +127,27 @@ namespace _8BitIMS
                         gameNames.Add(tempgameNames[i]);
                         consoleNames.Add(tempconsoleNames[i]);
                         gameQuantity.Add(tempQty);
-                        gameValue.Add((tempgameValue[i]));
+                        gameValue.Add((tempgameValue[i]*tempQty));
                     }
                     else
                     {
                         if (flag)
                         {
                             gameQuantity.Add(tempQty);
+                            gameValue.Add((tempgameValue[i]*tempQty));
                         }
                         else
                         {
                             gameQuantity.Add(tempgameQuantity[i]);
+                            gameValue.Add((tempgameValue[i]*tempgameQuantity[i]));
+
                         }
                         gameNames.Add(tempgameNames[i]);
                         consoleNames.Add(tempconsoleNames[i]);
-                        gameValue.Add((tempgameValue[i]));
                         gameNames.Add(tempgameNames[i+1]);
                         consoleNames.Add(tempconsoleNames[i+1]);
                         gameQuantity.Add(tempgameQuantity[i+1]);
-                        gameValue.Add((tempgameValue[i+1]));
+                        gameValue.Add((tempgameValue[i+1]*tempgameQuantity[i+1]));
                         break;
                     }
                 }
@@ -159,7 +161,7 @@ namespace _8BitIMS
                     gameNames.Add(tempgameNames[i]);
                     consoleNames.Add(tempconsoleNames[i]);
                     gameQuantity.Add(tempQty);
-                    gameValue.Add((tempgameValue[i]));
+                    gameValue.Add((tempgameValue[i]*tempQty));
                     flag = false;
                     tempQty = 0;
                 }
@@ -168,7 +170,7 @@ namespace _8BitIMS
                     gameNames.Add(tempgameNames[i]);
                     consoleNames.Add(tempconsoleNames[i]);
                     gameQuantity.Add(tempgameQuantity[i]);
-                    gameValue.Add((tempgameValue[i]));
+                    gameValue.Add((tempgameValue[i]*tempgameQuantity[i]));
 
                 }
             }

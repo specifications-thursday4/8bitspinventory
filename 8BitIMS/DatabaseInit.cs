@@ -147,7 +147,7 @@ namespace _8BitIMS
 
 
             command.CommandText = "CREATE TABLE IF NOT EXISTS transactions("
-                + " transaction_id int INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,"
+                + " transaction_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,"
                 + " game_id int NOT NULL,"
                 + " platform_id int NOT NULL,"
                 + " quantity int NOT NULL,"
