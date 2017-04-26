@@ -1,0 +1,43 @@
+﻿<Page x:Class="_8BitIMS.IMSMainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+       xmlns:local="clr-namespace:_8BitIMS"
+      mc:Ignorable="d" 
+      d:DesignHeight="540" d:DesignWidth="640"
+      Title="MainPage">
+
+    <Grid Background="LightSkyBlue">
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Canvas>
+            <Image Source="res/bg.png" Width="640" Height="540"/>
+        </Canvas>
+        <Button Style="{StaticResource QuestionBlock}" Click="Inventory_Click" Margin="80,385,490,45" Height="Auto" Width="Auto"/>
+        <Button Style="{StaticResource QuestionBlock}" Click="Exit" Margin="430,385,100,45" Height="Auto" Width="Auto"/>
+        <Button Style="{StaticResource QuestionBlock}" Click="Add_Item" Height="Auto" Margin="80,45,495,385" Width="Auto"/>
+        <Button Style="{StaticResource QuestionBlock}" Click="View_Detail" Margin="430,45,100,385" Width="Auto" Height="Auto"/>
+        <Canvas>
+            <Image Source="res/exit.png" Height="85" Canvas.Left="410" Canvas.Top="330" Width="165"/>
+        </Canvas>
+        <Canvas>
+            <Image Source="res/viewdetail.png" Height="85" Canvas.Top="85" Canvas.Left="415" Width="165"/>
+        </Canvas>
+        <Canvas>
+            <Image Source="res/inventory.png" Height="85" Canvas.Top="330" Canvas.Left="40" Width="165"/>
+        </Canvas>
+        <Canvas>
+            <Image Source="res/quickadd.png" Height="85" Canvas.Top="85" Canvas.Left="45" Width="165"/>
+        </Canvas>
+        <Canvas>
+            <Image Source="res/logo.png" Height="180" Canvas.Top="170" Canvas.Left="60" Width="550"/>
+        </Canvas>
+
+    </Grid>
+
+</Page>

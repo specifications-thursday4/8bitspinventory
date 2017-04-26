@@ -1,0 +1,26 @@
+﻿<Page x:Class="_8BitIMS.SummaryReports"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="540" d:DesignWidth="640"
+	Title="SummaryReports">
+
+    <Grid Background="LightSkyBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Button Style="{StaticResource QuestionBlock}" Click="popular" Grid.Column="0" HorizontalAlignment="Center"/>
+        <Button Style="{StaticResource QuestionBlock}" Click="TotalInventory" Grid.Column="1" HorizontalAlignment="Center"/>
+        <Canvas>
+            <Label Content="" FontSize="18" HorizontalAlignment="Center" Grid.Column="0" Width="85" Canvas.Left="120" Canvas.Top="159" />
+        </Canvas>
+        <Canvas>
+            <Label Content="Total Inventory"   FontSize="18" HorizontalAlignment="Center" Grid.Column="1" Canvas.Left="417" Canvas.Top="162"  />
+        </Canvas>
+    </Grid>
+
+
+</Page>
